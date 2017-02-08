@@ -1,0 +1,2 @@
+serviceClass: com.kingkingyyk.mysite.client.GreetingService
+path: DE1781AA0F06E387BEDD9680DE42608E.gwt.rpc
