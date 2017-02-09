@@ -188,7 +188,7 @@ public class PictureShowcase extends VerticalPanel {
 		}
 		
 		if (picture!=null) {
-			picture.setHeight((Window.getClientHeight()-210)+"px");
+			picture.setHeight((Window.getClientHeight()-170)+"px");
 			picture.setWidth((Window.getClientWidth()-100)+"px");
 		}
 	}

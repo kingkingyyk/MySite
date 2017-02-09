@@ -31,7 +31,6 @@
 }
 
 .pictureShowcaseViewport {
-	box-shadow: 0px 8px 6px 0px rgba(0, 0, 0, 0.1), 0px -8px 6px 0px rgba(0, 0, 0, 0.1);
 	transition: 0.5s;
 	transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
 	-webkit-transition: 0.5s;
@@ -45,6 +44,7 @@
 .pictureShowcaseControl {
 	font-family: 'Ubuntu Condensed', sans-serif;
 	font-size: 2em;
+	color: rgba(0,0,0,0.2);
 	width: 50px;
 	height: 50px;
 	line-height: 50px;
@@ -62,16 +62,14 @@
 }
 
 .pictureShowcaseControl:hover {
-	font-size: 3em;
-	background-color: rgba(0,0,0,0.3);
+	font-size: 4em;
+	color: black;
 }
 
 .pictureShowcasePicture {
 	width: 50%;
 	height: 300px;
 	margin: 0 auto;
-	margin-top: 20px;
-	margin-bottom: 20px;
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
