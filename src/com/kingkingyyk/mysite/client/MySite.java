@@ -5,9 +5,7 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.event.dom.client.ChangeEvent;
 import com.google.gwt.event.dom.client.ChangeHandler;
-import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.ListBox;
-import com.google.gwt.user.client.ui.Panel;
 import com.google.gwt.user.client.ui.RootPanel;
 
 public class MySite implements EntryPoint {
@@ -37,6 +35,8 @@ public class MySite implements EntryPoint {
 		bp.addClickableIcon("http://i.imgur.com/TnFHiIi.png", "Flickr", "https://www.flickr.com/photos/106834848@N08/");
 		bp.addClickableIcon("http://i.imgur.com/fuZsuDq.png", "Linkedin", "https://www.linkedin.com/in/yap-yee-king-947b24106");
 		bp.addClickableIcon("http://i.imgur.com/scl3pMw.png", "GitHub", "https://github.com/kingkingyyk");
+		bp.addClickableIcon("https://thumb.ibb.co/bzjg1F/uva.png", "uHunt (UVA)", "http://uhunt.felix-halim.net/id/422649");
+		bp.addClickableIcon("https://image.ibb.co/bOznaa/uva.png", "Project Euler", "https://projecteuler.net/country=Malaysia");
 		bp.addClickableIcon("http://i.imgur.com/WhqT9hx.png", "PC Recommendation & Builder", "http://1-dot-rigbuilder-141104.appspot.com/");
 		bp.addSeperator("|");
 		albumSelect=bp.addListBox();
@@ -50,20 +50,9 @@ public class MySite implements EntryPoint {
 		RootPanel.get().add(bp);
 	}
 	
-	public void setupPopUpPanel() {
-		String browser=Window.Navigator.getUserAgent();
-		if (!browser.contains("Chrome") && !browser.contains("Chromium")) {
-			BrowserCompatibilityPanel popup=new BrowserCompatibilityPanel();
-			popup.setText("Non-Chrome browser is detected. You might see stacked bottom bar.");
-			popup.center();
-			popup.show();
-		}
-	}
-	
 	public void onModuleLoad() {
 		setupRootPanel();
 		setupPictureShowcase();
 		setupBottomPanel();
-		setupPopUpPanel();
 	}
 }

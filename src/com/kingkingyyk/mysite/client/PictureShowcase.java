@@ -37,7 +37,6 @@ public class PictureShowcase extends VerticalPanel {
 	
 	public PictureShowcase (MySite instance) {
 		this.setStyleName("pictureShowcasePanel");
-		updatePanelSize();
 		
 		final Label lblLoading=new Label("Loading...");
 			lblLoading.setStyleName("pictureShowcaseLoadingText");
@@ -148,7 +147,6 @@ public class PictureShowcase extends VerticalPanel {
 		Window.addResizeHandler(new ResizeHandler() {
 			@Override
 			public void onResize(ResizeEvent event) {
-				updatePanelSize();
 				updatePictureSize();
 			}
 		});
@@ -178,11 +176,6 @@ public class PictureShowcase extends VerticalPanel {
 		updatePicture();
 	}
 	
-	private void updatePanelSize() {
-		this.setHeight((Window.getClientHeight()-150)+"px");
-		this.setWidth(Window.getClientWidth()+"px");
-	}
-	
 	private void updatePictureSize() {
 		if (btnBack!=null) {
 			btnBack.setHeight((Window.getClientHeight()-170)+"px");
@@ -195,7 +188,7 @@ public class PictureShowcase extends VerticalPanel {
 		}
 		
 		if (picture!=null) {
-			picture.setHeight((Window.getClientHeight()-170)+"px");
+			picture.setHeight((Window.getClientHeight()-210)+"px");
 			picture.setWidth((Window.getClientWidth()-100)+"px");
 		}
 	}
