@@ -6,20 +6,14 @@
 	background: white;
 	display:flex;
 	justify-content: center;
-	transition: 0.5s;
-	transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
-	-webkit-transition: 0.5s;
-	-webkit-transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
-	-o-transition: 0.5s;
-	-o-transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
-	-moz-transition: 0.5s;
-	-moz-transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+
 }
 
 .pictureShowcaseLoadingText {
 	font-family: 'Ubuntu Condensed', sans-serif;
 	font-size: 2em;
 	color: grey;
+	cursor: default;
 	transition: 0.5s;
 	transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
 	-webkit-transition: 0.5s;
@@ -28,6 +22,13 @@
 	-o-transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
 	-moz-transition: 0.5s;
 	-moz-transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+
+	    
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .pictureShowcaseViewport {
@@ -59,6 +60,13 @@
 	-o-transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
 	-moz-transition: 0.5s;
 	-moz-transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+	
+	
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .pictureShowcaseControl:hover {
@@ -95,10 +103,17 @@
 	text-align: center;
 	line-height: 20px;
 	vertical-align: middle;
-	transition: background .5s cubic-bezier(0.4, 0.0, 0.2, 1);
-	-webkit-transition: background .5s cubic-bezier(0.4, 0.0, 0.2, 1);
-	-o-transition: background .5s cubic-bezier(0.4, 0.0, 0.2, 1);
-	-moz-transition: background .5s cubic-bezier(0.4, 0.0, 0.2, 1);
+	cursor: default;
+	transition: .5s cubic-bezier(0.4, 0.0, 0.2, 1);
+	-webkit-transition: .5s cubic-bezier(0.4, 0.0, 0.2, 1);
+	-o-transition: .5s cubic-bezier(0.4, 0.0, 0.2, 1);
+	-moz-transition: .5s cubic-bezier(0.4, 0.0, 0.2, 1);
+	
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .bottomBar {
@@ -106,6 +121,7 @@
 	height: 50px;
 	text-align: left;
 	vertical-align: bottom;
+	background-color: white;
 	box-shadow: 0px -8px 6px 0px rgba(0, 0, 0, 0.1);
 	display: flex;
 	justify-content: space-between;
@@ -126,10 +142,6 @@
 	line-height: 30px;
 	text-align: left;
 	vertical-align: middle;
-	transition: .5s cubic-bezier(0.4, 0.0, 0.2, 1);
-	-webkit-transition: .5s cubic-bezier(0.4, 0.0, 0.2, 1);
-	-o-transition: .5s cubic-bezier(0.4, 0.0, 0.2, 1);
-	-moz-transition: .5s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 .bottomBarTextNotClickable {
@@ -142,10 +154,17 @@
 	line-height: 45px;
 	text-align: left;
 	vertical-align: middle;
+	
 	transition: .5s cubic-bezier(0.4, 0.0, 0.2, 1);
 	-webkit-transition: .5s cubic-bezier(0.4, 0.0, 0.2, 1);
 	-o-transition: .5s cubic-bezier(0.4, 0.0, 0.2, 1);
 	-moz-transition: .5s cubic-bezier(0.4, 0.0, 0.2, 1);
+
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .bottomBarTextClickable {
@@ -155,18 +174,64 @@
 	width: auto;
 	padding-top: 5px;
 	padding-left: 10px;
+	padding-right: 10px;
 	line-height: 45px;
 	text-align: left;
 	vertical-align: middle;
 	cursor: pointer;
+	
+	transition: .5s cubic-bezier(0.4, 0.0, 0.2, 1);
+	-webkit-transition: .5s cubic-bezier(0.4, 0.0, 0.2, 1);
+	-o-transition: .5s cubic-bezier(0.4, 0.0, 0.2, 1);
+	-moz-transition: .5s cubic-bezier(0.4, 0.0, 0.2, 1);
+	
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.bottomBarTextClickable:hover {
+	font-size: 2em;
+}
+
+.bottomBarButton {
+	font-family: 'Fira Sans Condensed', sans-serif;
+	font-size: 1.5em;
+	height: 50px;
+	width: auto;
+	padding-top: 5px;
+	padding-left: 7px;
+	padding-right: 5px;
+	line-height: 45px;
+	text-align: left;
+	vertical-align: middle;
+	cursor: pointer;
+	background-color: white;
+	border-style: none;
+	outline: none;
+	
 	transition: .5s cubic-bezier(0.4, 0.0, 0.2, 1);
 	-webkit-transition: .5s cubic-bezier(0.4, 0.0, 0.2, 1);
 	-o-transition: .5s cubic-bezier(0.4, 0.0, 0.2, 1);
 	-moz-transition: .5s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
-.bottomBarTextClickable:hover {
-	font-size: 2em;
+.bottomBarButton:hover {
+	padding-left: 9px;
+	padding-right: 8px;
+	background-color: rgba(0,0,0,0.3);
+}
+
+.bottomBarButton:active {
+	font-size: 1.2em;
+}
+
+.keyframes bottomBarButtonHoverAnim {
+	0% {opacity: 1.0}
+	50% {opacity: 0.0; background-color: grey;}
+	100% {opacity: 1.0}
 }
 
 .bottomBarIconClickable {
@@ -204,16 +269,75 @@
 	-webkit-transition: .5s cubic-bezier(0.4, 0.0, 0.2, 1);
 	-o-transition: .5s cubic-bezier(0.4, 0.0, 0.2, 1);
 	-moz-transition: .5s cubic-bezier(0.4, 0.0, 0.2, 1);
+	
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-.popupPanel {
-	border-color: white;
-	border-radius: 10px;
+.aboutPanel {
+	width: 100%;
 	margin: 0 auto;
-	background-color: white;
+	padding-top: 50px;
+	padding-bottom: 80px;
+	background: white;
 	display:flex;
-	align-items:center;
-	justify-content:center;
-	padding: 30px 30px 30px 30px;
-	filter: drop-shadow(5px 5px 10px rgba(255,255,255,0.5));
+	justify-content: center;
+}
+
+.aboutPanelTitle {
+	padding-left: 50px;
+	padding-bottom: 30px;
+	font-family: 'Fira Sans Condensed', sans-serif;
+	font-size: 3em;
+	color: grey;
+	font-align: left;
+	
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+.aboutPanelText {
+	padding-left: 80px;
+	padding-right: 80px;
+	font-family: 'Fira Sans Condensed', sans-serif;
+	font-size: 1.2em;
+	line-height: 160%;
+	color:black;
+	
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+.aboutPanelSubtext {
+	padding-left: 80px;
+	padding-right: 80px;
+	font-family: 'Fira Sans Condensed', sans-serif;
+	font-size: 1em;
+	font-style: Italic;
+	line-height: 160%;
+	color:black;
+	
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+.aboutPanelImage {
+	padding-left: 80px;
+	padding-right: 80px;
+	width: 60%
 }

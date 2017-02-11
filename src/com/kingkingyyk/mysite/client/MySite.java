@@ -14,6 +14,7 @@ public class MySite implements EntryPoint {
 	public static PictureShowcase ps;
 	public static BottomPanel bp;
 	public static ListBox albumSelect;
+	public static About ap;
 
 	public void setupRootPanel() {
 		RootPanel.get().getElement().getStyle().setMargin(0,Unit.PX);
@@ -28,8 +29,10 @@ public class MySite implements EntryPoint {
 	public void setupBottomPanel() {
 		bp=new BottomPanel();
 		
-		bp.addUnclickableText("kingkingyyk's Hideout");
-		bp.addSeperator("|");
+		bp.addUnclickableText("kingkingyyk");
+		bp.addSeperator("|").getElement().getStyle().setMarginRight(5,Unit.PX);
+		bp.addButton(new AboutButton());
+		bp.addSeperator("|").getElement().getStyle().setMarginLeft(5,Unit.PX);;
 		bp.addClickableIcon("http://i.imgur.com/QPuoTbp.png", "FB", "https://www.facebook.com/kingkingyyk");
 		bp.addClickableIcon("http://i.imgur.com/TxEvO7H.png", "Lowyat.NET", "https://forum.lowyat.net/index.php?showuser=160560");
 		bp.addClickableIcon("http://i.imgur.com/TnFHiIi.png", "Flickr", "https://www.flickr.com/photos/106834848@N08/");
@@ -50,9 +53,37 @@ public class MySite implements EntryPoint {
 		RootPanel.get().add(bp);
 	}
 	
+	public void setupAboutPanel() {
+		ap=new About("About");
+		
+		ap.addParagraph("Hi, I'm a technology enthusiast based in Kuala Lumpur that believes in life-long hands-on learning. "
+						+ "My journey of computing started at 5 years old. "
+						+ "Years later, I started PC building and programming during my middle school, and became an Elite member in Lowyat.NET, the Malaysia top forum. "
+						+ "This has accelerated my path to study about computing. Being one of the national top scorer of Malaysian Higher Education Certificate,"
+						+ "I managed to enter the top university in Malaysia, University of Malaya, and subsequently graduated from the studies of Computer Science (Computer System"
+						+ " & Networking) at top ranking. Now, I'm working as test engineer in Quintiq.");
+		ap.addBlankLine();
+		ap.addImage("https://c1.staticflickr.com/9/8031/29681841892_35e3d7ffda_h.jpg");
+		ap.addSubtext("My hostelmates & me. I'm at somewhere behind! ;)");
+		ap.addBlankLine();
+		ap.addParagraph("I have experience in :");
+		ap.addList(new String [] {"PC Building, Consultation & Troubleshooting","vJass","Java (SE 8, Swing, SWT & FX)","Competitive Programming",
+								  "Oracle SQL","HyperSQL","Hibernate Framwork","Apache Cassandra","Apache Spark","GWT & CSS (this website is built on it!)",
+								  "Cisco Networking (sub-CCNP & CCDA level)","OSI Layers Definition & Customization","VHDL",
+								  "Internet of Things Automation (Arduino, ARM mbed, Raspberry Pi & related circuits)","HP Quality Center",
+								  "VBScript"});
+		ap.addParagraph("During free time, I solve algorithm problems in various website (the main focus now is UVA), "
+						+"build automation tool that removes the repetitive tasks in daily life, and study the underlying architecture and working mechanism of technologies. "
+						+"Sometimes I watch thoughtful dramas and movies! In case you wonder of the photos you viewed on first sight, I'm a casual shooter "
+						+"with occasional assignments.");
+		ap.addBlankLine();
+		ap.addParagraph("Need recommendation on PC/laptop/camera/phone? Want to hop on competitive programming/IoT? Feel free to PM me on Lowyat.NET.");
+	}
+	
 	public void onModuleLoad() {
 		setupRootPanel();
 		setupPictureShowcase();
 		setupBottomPanel();
+		setupAboutPanel();
 	}
 }

@@ -3,6 +3,7 @@ package com.kingkingyyk.mysite.client;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
@@ -14,7 +15,7 @@ public class BottomPanel extends HorizontalPanel {
 		setStyleName("bottomBar");
 	}
 	
-	public void addClickableIcon (String iconUrl, String hoverText, final String hyperlink) {
+	public Image addClickableIcon (String iconUrl, String hoverText, final String hyperlink) {
 		Image img=new Image(iconUrl);
 			img.setStyleName("bottomBarIconClickable");
 			img.setAltText(hoverText);
@@ -28,18 +29,43 @@ public class BottomPanel extends HorizontalPanel {
 				
 			});
 		add(img);
+		return img;
 	}
 	
-	public void addUnclickableText (String text) {
-		Label lbl=new Label(text);
-			lbl.setStyleName("bottomBarTextNotClickable");
+	public void addButton (Button btn) {
+		btn.setStyleName("bottomBarButton");
+		add(btn);
+	}
+	
+	public void addClickableLabel (Label lbl) {
+		lbl.setStyleName("bottomBarTextClickable");
 		add(lbl);
 	}
 	
-	public void addSeperator (String text) {
+	public void addUnclickableLabel (Label lbl) {
+		lbl.setStyleName("bottomBarTextUnclickable");
+		add(lbl);
+	}
+	
+	public Label addClickableText (String text) {
+		Label lbl=new Label(text);
+			lbl.setStyleName("bottomBarTextClickable");
+		add(lbl);
+		return lbl;
+	}
+	
+	public Label addUnclickableText (String text) {
+		Label lbl=new Label(text);
+			lbl.setStyleName("bottomBarTextNotClickable");
+		add(lbl);
+		return lbl;
+	}
+	
+	public Label addSeperator (String text) {
 		Label seperator=new Label(text);
 			seperator.setStyleName("bottomBarSeperator");
 		add(seperator);
+		return seperator;
 	}
 	
 	public ListBox addListBox () {
