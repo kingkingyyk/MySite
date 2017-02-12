@@ -68,9 +68,9 @@ public class About extends VerticalPanel {
 	public void initialize(MySite ms) {
 		this.addParagraph("Hi, I'm a technology enthusiast based in Kuala Lumpur that believes in life-long hands-on learning. "
 						+ "My journey of computing started at 5 years old. "
-						+ "Years later, I started PC building and programming during my middle school, and became an Elite member in Lowyat.NET, the Malaysia top forum. "
-						+ "This has accelerated my path to study about computing. Being one of the national top scorer of Malaysian Higher Education Certificate, "
-						+ "I managed to enter the top university in Malaysia, University of Malaya, and subsequently graduated from the studies of Computer Science (Computer System"
+						+ "Years later, I started PC building and programming during my middle school, and became an Elite member in Lowyat.NET, the popular Malaysian forum. "
+						+ "Being one of the national top scorer of Malaysian Higher Education Certificate, I managed to enter the top university in Malaysia, "
+						+ "University of Malaya, and subsequently graduated from the studies of Computer Science (Computer System"
 						+ " & Networking) at top ranking. Now, I'm working as test engineer in Quintiq.");
 		this.addBlankLine();
 		this.addImage("https://c1.staticflickr.com/9/8031/29681841892_35e3d7ffda_h.jpg");
