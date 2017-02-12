@@ -341,3 +341,37 @@
 	padding-right: 80px;
 	width: 60%
 }
+
+.aboutPanelGrid {
+	margin-left: 80px;
+	padding: 0px;
+}
+
+.aboutPanelGridTitle {
+	margin-left: -2px;
+	margin-right: -2px;
+	padding-top: 2px;
+	padding-left: 3px;
+	padding-right: 3px;
+	font-family: 'Fira Sans Condensed', sans-serif;
+	font-size: 1.1em;
+	line-height: 120%;
+	color: white;
+	background-color: rgba(0,0,0,0.3);
+	border-style: none;
+	border-spacing: 0px 0px;
+}
+
+.aboutPanelGridText {
+	margin-left: -2px;
+	margin-right: -2px;
+	padding-left: 3px;
+	padding-right: 3px;
+	font-family: 'Fira Sans Condensed', sans-serif;
+	font-size: 1em;
+	line-height: 120%;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: grey;
+	border-spacing: 0px 0px;
+}

@@ -1,13 +1,11 @@
 package com.kingkingyyk.mysite.server;
 
 import com.kingkingyyk.mysite.client.GreetingService;
-import com.kingkingyyk.mysite.shared.FieldVerifier;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.StringTokenizer;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
@@ -33,4 +31,8 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 		return list;
 	}
 
+	public String getUVARankList (String username) throws IllegalArgumentException {
+		return uHuntRetriever.getRankingListByUsername(username, 5, 5);
+	}
+	
 }

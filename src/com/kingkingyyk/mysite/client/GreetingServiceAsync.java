@@ -6,4 +6,5 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 
 public interface GreetingServiceAsync {
 	void getPictureData(AsyncCallback<ArrayList<String []>> callback) throws IllegalArgumentException;
+	void getUVARankList(String username, AsyncCallback<String> callback)  throws IllegalArgumentException;
 }

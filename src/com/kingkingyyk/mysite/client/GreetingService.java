@@ -8,4 +8,5 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 @RemoteServiceRelativePath("greet")
 public interface GreetingService extends RemoteService {
 	ArrayList<String []> getPictureData() throws IllegalArgumentException;
+	String getUVARankList(String username) throws IllegalArgumentException;
 }
