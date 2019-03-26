@@ -1,0 +1,30 @@
+{% extends "simple.html" %}
+
+{% block body %}
+    {{block.super}}
+    <div class="textContent">
+        {% for category, projects in entry_map.items %}
+            <blockquote style="border-left: 5px solid grey;">{{category.name}}</blockquote>
+            <ul class="collapsible">
+                {% for project in projects %}
+                    <li>
+                        <div class="collapsible-header">
+                            <i class="tiny material-icons">info_outline</i>{{project.name}}
+                        </div>
+                        <div class="collapsible-body">
+                            {% autoescape off %}{{project.description}}{% endautoescape %}
+                            <br><br>
+                            {% if project.url|length > 0 %}
+                                <a href="{{project.url}}" target="_blank">Source</a>
+                            {% endif %}
+                            {% for tag in project.tag_tokens %}
+                                <span class="grey badge white-text" style="margin-left: 5px">{{tag}}</span>
+                            {% endfor %}
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+            </br>
+        {% endfor %}
+    </div>
+{% endblock body %}

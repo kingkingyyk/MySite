@@ -1,0 +1,32 @@
+{% extends "simple.html" %}
+
+{% block body %}
+    {{block.super}}
+    <div class="textContent">
+        {% for category, entries in entry_map.items %}
+            <blockquote style="border-left: 5px solid grey;">{{category.name}}</blockquote>
+            <ul class="collection">
+                {% for entry in entries %}
+                    <li class="collection-item">
+                        {{entry.name}}
+                        {% if entry.description.strip|length > 0 %}
+                              <i class="tiny material-icons tooltipped" data-tooltip="{{entry.description.strip}}">grade</i>
+                        {% endif %}
+                        {% if entry.level.strip|length > 0 %}
+                            <span class="badge
+                            {% if entry.level == 'ADVANCED' %}
+                                green white-text
+                            {% elif entry.level == 'BEGINNER' %}
+                                red white-text
+                            {% else %}
+                                blue white-text
+                            {% endif %}
+                            ">{{entry.level.strip}}</span>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+            </br>
+        {% endfor %}
+    </div>
+{% endblock body %}

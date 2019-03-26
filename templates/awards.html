@@ -1,0 +1,54 @@
+{% extends "simple.html" %}
+
+{% block js %}
+    <script src="/static/awards.js"></script>
+{% endblock %}
+
+{% block body %}
+    {{block.super}}
+    <div class="textContent">
+        {% for category, entries in entry_map.items %}
+            <blockquote style="border-left: 5px solid grey;">{{category.name}}</blockquote>
+            <ul class="collapsible">
+                {% for entry in entries %}
+                    <li>
+                        <div class="collapsible-header">
+                            {{entry.name}}
+                            {% if entry.tag.strip|length > 0 %}
+                                <span class="badge blue white-text">{{entry.tag.strip}}</span>
+                            {% endif %}
+                        </div>
+                        {% if entry.description.strip|length > 0 %}
+                        <div class="collapsible-body">
+                            {{entry.description|linebreaks}}
+                        </div>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+            </br>
+        {% endfor %}
+
+        <blockquote style="border-left: 5px solid grey;">
+            uHunt Ranking
+            <span class="badge white-text" id="uva_percentile">
+                <div class="preloader-wrapper small active">
+                    <div class="spinner-layer spinner-blue-only">
+                      <div class="circle-clipper left">
+                        <div class="circle"></div>
+                      </div><div class="gap-patch">
+                        <div class="circle"></div>
+                      </div><div class="circle-clipper right">
+                        <div class="circle"></div>
+                      </div>
+                    </div>
+                </div>
+            </span>
+        </blockquote>
+        <div class="card" style="padding: 20px" id="uva_rank_list">
+            <div class="progress">
+                <div class="indeterminate" style="background-color: #2196F3;"></div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}
