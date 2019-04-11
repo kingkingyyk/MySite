@@ -1,0 +1,60 @@
+header, main, footer {
+  padding-left: 300px;
+}
+
+@media only screen and (max-width : 992px) {
+  header, main, footer {
+    padding-left: 0;
+  }
+}
+
+html
+{
+    height: 100%;
+    animation-name: fadeInAnim;
+    animation-duration: 0.4s;
+}
+
+body
+{
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0, 0, 0, 0.5)), url("https://farm5.staticflickr.com/4617/38859446950_309cef48a9_h.jpg");
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 100%;
+}
+
+main
+{
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 20%;
+    color: white;
+}
+
+.profileLink img
+{
+    height: 100%;
+    width: auto;
+    padding: 10px;
+    float: left;
+}
+
+.splashText
+{
+    font-size: 50px;
+}
+
+@keyframes fadeInAnim
+{
+    from
+    {
+        opacity: 0.0;
+    }
+    to
+    {
+        opacity: 1.0;
+    }
+}

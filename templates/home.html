@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}kingkingyyk{% endblock title %}
+{% block css %}
+    <link rel="stylesheet" href="/static/home.css">
+{% endblock css %}
+{% block body %}
+    <ul id="slide-out" class="sidenav sidenav-fixed" >
+        <li>
+            <div class="user-view" style="background-color: black">
+                <img class="circle" src="{{ profile.profile_picture }}">
+                <span class="white-text name">{{ profile.name }}</span>
+                <span class="white-text email"></span>
+            </div>
+        </li>
+        {% for link in int_profile_links %}
+            <li><a class="waves-effect profileLink" href="{{ link.link }}">
+                {% if link.icon is not None %}
+                    <img src="{{link.icon}}"/>
+                {% endif %}
+                {{link.name}}</a></li>
+        {% endfor %}
+        <li><div class="divider"></div></li>
+        <li><a class="subheader">Links</a></li>
+        {% for link in ext_profile_links %}
+            <li><a class="waves-effect profileLink" href="{{ link.link }}" target="_blank"><img src="{{link.icon}}"/>{{link.name}}</a></li>
+        {% endfor %}
+        <li><div class="divider"></div></li>
+        <li><a class="subheader">Powered by</a></li>
+        <li><a class="waves-effect profileLink" href="https://www.djangoproject.com/" target="_blank">Django</a></li>
+        <li><a class="waves-effect profileLink" href="https://materializecss.com/" target="_blank">Materialize CSS</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="subheader">Hosted on</a></li>
+        <li><a class="waves-effect profileLink" href="https://gunicorn.org/" target="_blank">Gunicorn</a></li>
+        <li><a class="waves-effect profileLink" href="https://www.nginx.com/" target="_blank">Nginx</a></li>
+        <li><a class="waves-effect profileLink" href="https://www.raspberrypi.org/" target="_blank">Raspberry Pi</a></li>
+    </ul>
+    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="small material-icons" style="color: white; margin: 20px">menu</i></a>
+    <main>
+        <div class="splashText">Hi, this is the portal of a technology enthusiast!</div>
+    </main>
+{% endblock body %}

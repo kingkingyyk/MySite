@@ -1,0 +1,6 @@
+{% extends "simple.html" %}
+
+{% block body %}
+    {{block.super}}
+    <div class="textContent">{% autoescape off %}{{page.content|linebreaksbr}}{% endautoescape %}</div>
+{% endblock body %}

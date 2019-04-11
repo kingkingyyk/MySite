@@ -1,0 +1,105 @@
+html
+{
+    padding: 0px;
+}
+
+.topBar
+{
+    height: 70px;
+    background-color: grey;
+    color: white;
+    padding: 10px;
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+}
+
+.backButton
+{
+    height: 50px;
+    color: white;
+    position:absolute;
+    text-align: center;
+    line-height: 60px;
+    padding: 2px;
+}
+
+main
+{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+@keyframes h1Anim
+{
+    from
+    {
+        opacity: 0.0;
+    }
+    to
+    {
+        opacity: 1.0;
+    }
+}
+
+.title
+{
+    color: white;
+    padding-left: 50px;
+    animation-name: h1Anim;
+    animation-duration: 1s;
+    font-size: 30px;
+    padding-top: -10px;
+}
+
+.textContent
+{
+    display: block;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    opacity: 0.0;
+    animation-name: h1Anim;
+    animation-duration: 1s;
+    animation-delay: 0.4s;
+    animation-fill-mode: forwards;
+}
+
+@media only screen and (min-width : 0em) {
+  .textContent {
+    max-width: 80%
+  }
+}
+
+.pictureInText
+{
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.textContentImgText
+{
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    font-style: italic;
+    font-size: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.progress
+{
+    background-color: grey;
+}
+
+..indeterminate
+{
+    background-color: grey;
+}

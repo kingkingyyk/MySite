@@ -1,0 +1,16 @@
+<table>
+    <thead>
+        <th>Rank</th>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Ac</th>
+        <th>Nos</th>
+    </thead>
+    {% for uva_rank in uva_rank_list %}
+    <tr>
+        {% for data in uva_rank %}
+            <td>{% autoescape off %}{{ data }}{% endautoescape %}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>

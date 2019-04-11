@@ -1,4 +1,5 @@
-/test-classes/
-*.class
-/
-gwt-unitCache/
+db.sqlite3
+.idea/**
+**/__pycache__/**
+**/migrations/**
+static/admin/**

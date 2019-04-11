@@ -1,0 +1,48 @@
+{% extends "simple.html" %}
+
+{% block css %}
+    {{block.super}}
+    <link rel="stylesheet" href="/static/gallery.css">
+{% endblock css %}
+
+{% block js %}
+    <script src="/static/gallery.js"></script>
+{% endblock %}
+
+{% block body %}
+    {{block.super}}
+    <div class="textContent">
+        <div class="input-field col s12">
+            <select multiple id="camera-filter">
+                {% for id, name in cameras %}
+                    <option value="{{id}}" selected>{{name}}</option>
+                {% endfor %}
+            </select>
+            <label>Filter By Camera</label>
+        </div>
+        <div class="input-field col s12">
+            <select multiple id="lens-filter">
+                {% for id, name in lenses %}
+                    <option value="{{id}}" selected>{{name}}</option>
+                {% endfor %}
+            </select>
+            <label>Filter By Lens</label>
+        </div>
+        <div class="input-field col s12">
+            <select multiple  id="tag-filter">
+                {% for id, name in tags %}
+                    <option value="{{id}}" selected>{{name}}</option>
+                {% endfor %}
+            </select>
+            <label>Filter By Tag</label>
+        </div>
+
+        <div id="pictureGrid" class="row">
+        </div>
+        <div id="loader">
+          <div class="progress" style="background-color: rgba(0, 0, 0, 0);">
+              <div class="indeterminate" style="background-color: #2196F3;"></div>
+          </div>
+        </div>
+    </div>
+{% endblock %}
