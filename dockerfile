@@ -5,7 +5,7 @@ COPY ./ /site
 WORKDIR /site
 RUN apt-get update \
     && apt-get -y upgrade \
-    && apt-get install -y gcc libxml2-dev libxslt1-dev \
+    && apt-get install -y gcc libxml2-dev libxslt1-dev zlib1g-dev \
     && pip install --no-cache-dir -r requirements.txt \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
