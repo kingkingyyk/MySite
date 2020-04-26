@@ -17,4 +17,4 @@ RUN apt-get update \
         \) -exec rm -rf '{}' +
 
 STOPSIGNAL SIGTERM
-CMD ['/usr/local/bin/gunicorn -w 4 -b 0.0.0.0:8080 mysite.wsgi']
+CMD ['cd /site && /usr/local/bin/gunicorn -w 4 -b 0.0.0.0:8080 mysite.wsgi']
