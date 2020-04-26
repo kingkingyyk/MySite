@@ -3,7 +3,8 @@ EXPOSE 8080
 
 COPY ./ /site 
 WORKDIR /site
-RUN apt-get update \
+RUN chmod 777 /site/start.sh\
+    && apt-get update \
     && apt-get -y upgrade \
     && apt-get install -y gcc libxml2-dev libxslt1-dev zlib1g-dev \
     && pip install --no-cache-dir -r requirements.txt \
@@ -17,4 +18,4 @@ RUN apt-get update \
         \) -exec rm -rf '{}' +
 
 STOPSIGNAL SIGTERM
-CMD ['/site/start.sh']
+CMD '/site/start.sh'
