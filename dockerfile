@@ -1,9 +1,20 @@
 FROM python:3.8-slim-buster
+EXPOSE 8080
 
 COPY ./ /site 
-RUN cd /site \
-    && pip install -r --no-cache-dir requirements.txt
+WORKDIR /site
+RUN apt-get update \
+    && apt-get -y upgrade \
+    && apt-get install -y gcc libxml2-dev libxslt1-dev \
+    && pip install --no-cache-dir -r requirements.txt \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* \
+    && find /usr/local -depth \
+        \( \
+            \( -type d -a \( -name test -o -name tests \) \) \
+            -o \
+            \( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) \
+        \) -exec rm -rf '{}' +
 
-EXPOSE 8080
 STOPSIGNAL SIGTERM
-CMD ['cd /site && gunicorn -w 4 -b 0.0.0.0:8080 mysite.wsgi']
+CMD ['gunicorn -w 4 -b 0.0.0.0:8080 mysite.wsgi']
