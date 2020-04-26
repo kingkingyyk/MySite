@@ -1,0 +1,1 @@
+cd /site && /usr/local/bin/gunicorn -w 4 -b 0.0.0.0:8080 mysite.wsgi
